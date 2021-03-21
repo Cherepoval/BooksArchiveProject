@@ -26,21 +26,21 @@ public class BootStrapData implements CommandLineRunner {
         System.out.println("Number of books: " + bookRepository.count());
 
         Scanner sc = new Scanner(System.in);
-        String fn = sc.nextLine();
-        String ln = sc.nextLine();
-        String bk = sc.nextLine();
-        String in = sc.nextLine();
+        String firstname = sc.nextLine();
+        String lastname = sc.nextLine();
+        String book = sc.nextLine();
+        int isbn = sc.nextInt();
 
-        Author a = new Author(fn, ln);
-        Book b = new Book(bk, in);
+        Author author = new Author(firstname, lastname);
+        Book titleBook = new Book(book, isbn);
 
-        a.getBooks().add(b);
-        b.getAuthors().add(a);
+        author.getBooks().add(titleBook);
+        titleBook.getAuthors().add(author);
 
-        authorRepository.save(a);
-        bookRepository.save(b);
+        authorRepository.save(author);
+        bookRepository.save(titleBook);
 
-        run();
+        //run();
 
     }
 }
