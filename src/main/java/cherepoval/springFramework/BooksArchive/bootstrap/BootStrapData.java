@@ -21,15 +21,15 @@ public class BootStrapData implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
 
-        System.out.println("Number of books: " + bookRepository.count());
+        while (true){System.out.println("Number of books: " + bookRepository.count());
 
         Scanner sc = new Scanner(System.in);
         String firstname = sc.nextLine();
         String lastname = sc.nextLine();
         String book = sc.nextLine();
-        int isbn = sc.nextInt();
+        String isbn = sc.nextLine();
 
         Author author = new Author(firstname, lastname);
         Book titleBook = new Book(book, isbn);
@@ -38,9 +38,9 @@ public class BootStrapData implements CommandLineRunner {
         titleBook.getAuthors().add(author);
 
         authorRepository.save(author);
-        bookRepository.save(titleBook);
+        bookRepository.save(titleBook);}
 
-        //run();
+
 
     }
 }
