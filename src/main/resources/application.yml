@@ -1,0 +1,17 @@
+server:
+  error:
+    include-massege: always
+    include-binding-errors: always
+spring:
+  datasource:
+    password: Cherepoval05061982
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/books_archive
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    proparies:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show_sql: true
